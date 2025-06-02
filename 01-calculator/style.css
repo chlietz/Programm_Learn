@@ -1,1 +1,6 @@
 /* CSS für Calculator */
+button {
+    width:35px;
+    line-height: 25px;
+    margin: 5px;
+}
