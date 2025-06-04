@@ -49,7 +49,7 @@ function Rechnen (zeichen) {
             mal2 = Lesen();
             alert(mal1);
             alert(mal2);
-            if ( zeichen = "Tmal") {
+            if ( zeichen === "Tmal") {
                 erg = parseInt(mal1) * parseInt(mal2);
                 //alert(erg);
                 Schreiben(erg);
