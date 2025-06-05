@@ -13,7 +13,7 @@
 		<h1>Calculator</h1>
 		<div class="container text-center">
 			<div id="calc_row">
-				<input id="ausgabe" name="Ausgabe" type="text" width="100%">
+				<input id="ausgabe" name="Ausgabe" type="text" width="100%" readonly>
 			</div>
 			<div class="calc_row">
 				<button class="digit" name="T1" value="1" onclick="Anzeige('1')">
@@ -25,7 +25,7 @@
 				<button class="digit" name="T3" value="3" onclick="Anzeige('3')">
 				3
 				</button>
-				<button class="sign" name="Tmal" value="x" onclick="Verteiler('Tmal')">
+				<button class="sign" name="Tmal" value="x" onclick="EigababeOperator('*')">
 				x
 				</button>
 			</div>
@@ -39,7 +39,7 @@
 				<button class="digit" name="T6" value="6"onclick="Anzeige('6')">
 				6
 				</button>
-				<button class="sign" name="Tdiv" value="/" onclick="Verteiler('Tdiv')">
+				<button class="sign" name="Tdiv" value="/" onclick="EigababeOperator('/')">
 				/
 				</button>
 			</div>
@@ -53,7 +53,7 @@
 				<button class="digit" name="T9" value="9" onclick="Anzeige('9')">
 				9
 				</button>
-				<button class="sign" name="Tplus" value="+" onclick="Verteiler('Tplus')">
+				<button class="sign" name="Tplus" value="+" onclick="EigababeOperator('+')">
 				+
 				</button>
 			</div>
@@ -61,13 +61,13 @@
 				<button class="digit" name="T0" value="0" onclick="Anzeige('0')">
 				0
 				</button>
-				<button class="leer" name="Tres" value="=" onclick="Verteiler('Tres')">
+				<button class="leer" name="Tres" value="=" onclick="Berechnen()">
 				=
 				</button>
-				<button class="sign" name="Tz" value="<" onclick="Verteiler('Tz')">
-				<-
+				<button class="sign" name="CLR" value="<" onclick="ClearDisplay()">
+				CLR
 				</button>
-				<button class="sign" name="Tminus" value="-" onclick="Verteiler('Tminus')">
+				<button class="sign" name="Tminus" value="-" onclick="EigababeOperator('-')">
 				-
 				</button>
 			</div>
