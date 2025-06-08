@@ -1,44 +1,45 @@
 // JavaScript Code für Todo List
-let counterTask = 0;
-let tasks = [];
+
+const tasks = [];
+
+
 window.addEventListener('load', () => addInput());
 
 function addTask (taskText) {
-    //alert(`Aufgabe Nr.: ${counterTask}: ${taskText}`);
+    
     if (document.getElementById('inputTask').value === "") {return;}
-    renderTasks(taskText);
+    const neuerTask = {text: taskText, done: false, created: new Date().toISOString().split("T")[0]};
+    tasks.push(neuerTask);
+    renderTasks(tasks);
     document.getElementById('inputTask').value = "";
 
 }
 
-function renderTasks (taskText) {
-    //const container = document.getElementById('renderTasks');
-    //const render = document.createElement('P');
-    //render.className = 'renderTask';
-    //render.textContent = 'Aufgabe Nr.:'+ counterTask + ' : ' + taskText;
-    //container.appendChild(render);
-    tasks[counterTask] = taskText;
-    counterTask++;
-    saveTasks(tasks);
-}
-
-function saveTasks () {
-    //alert("save: " + tasks);
-
+function renderTasks (taskText) {    
     const container = document.getElementById("listen");
     container.innerHTML = "";
 
     const ausgabeListe = document.createElement('ul');
     ausgabeListe.className = 'list-group';
 
-    for (let task in tasks) {
-        const AL = document.createElement('li');
+    for (let z = 0; z < tasks.length; z++) {
+        const AL = document.createElement('list-unstyled');
+        const check = document.createElement('input');
+        check.type = 'checkbox';
+        check.className = "checkDone";
         AL.class = 'list-group-item';
-        AL.textContent = tasks[task];
+        AL.textContent = ' ' + tasks[z].text;
         ausgabeListe.appendChild(AL);
+        AL.insertAdjacentElement("afterbegin", check);
     }
 
     container.appendChild(ausgabeListe);
+}
+
+function saveTasks () {
+    //alert("save: " + tasks);
+
+    
 }
 
 function loadTasks () {
