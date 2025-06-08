@@ -1,1 +1,20 @@
 /* CSS für Todo List */
+
+#renderTasks {
+    text-align: left;
+}
+
+.btn {
+    background: #00d9ff;
+}
+.form-label {
+    width: 150px;
+     float:left;
+}
+.form-controls {
+    width: 100%;
+    clear: left;
+}
+.btn {
+    margin-top: 5px;
+}
